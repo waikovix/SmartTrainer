@@ -3,7 +3,6 @@
 Daily Intake
 @endsection
 
-@section('content')
 @section('addons')
 <div class="md-toolbar-section-end">
             <md-button class="md-icon-button" @click = "showDialog = true">
@@ -20,7 +19,7 @@ Daily Intake
       <md-card-content>
         <h2>
         {{Auth::user()->meals->sum('calories')}}
-        
+
         /{{Auth::user()->daily_calories}}</h2>
       </md-card-content>
     </md-card>
@@ -37,7 +36,7 @@ Daily Intake
     </md-field>
     <h1>Result</h1>
     <a href="/food/add">Not find what you want.Create here</a>
-    <hr> 
+    <hr>
     <ul>
     <li  v-for = "item in items"><meal-item  :mealid = 'item.id' :name = 'item.name'></meal-item></li>
     </ul>
@@ -45,17 +44,17 @@ Daily Intake
         <md-button class="md-primary" @click="showDialog = false">Close</md-button>
         </md-dialog-actions>
         </md-tab>
-       
+
     </md-dialog>
     <md-dialog :md-active.sync="showNutrion">
       <md-dialog-title>Nutrition Info</md-dialog-title>
 
       <md-tabs md-dynamic-height>
         <md-tab md-label="Nutrition info">
-          <h1>Protein: 
+          <h1>Protein:
           {{Auth::user()->meals->sum('protein')}}
            /{{Auth::user()->protein}}g</h1>
-           <h1>Fat: 
+           <h1>Fat:
            {{Auth::user()->meals->sum('fat')}}
            /{{Auth::user()->fat}}g</h1>
            <h1>Carbs:
@@ -65,18 +64,18 @@ Daily Intake
         <md-button class="md-primary" @click="showNutrion = false">Close</md-button>
         <md-dialog-actions>
         </md-tab>
-        
+
     </md-dialog>
     <md-card>
       <md-card-header>
         <div class="md-title">Breakfast</div>
         <div class="md-subhead"></div>
       </md-card-header>
- 
+
       <md-card-expand>
         <md-card-actions md-alignment="space-between">
            <div>
-            
+
           </div>
 
           <md-card-expand-trigger>
@@ -91,7 +90,7 @@ Daily Intake
            <md-list >
             @foreach(Auth::user()->meals as $meal)
             @if($meal->type == 'breakfast')
-                <md-list-item>{{$meal->food['name']}} - {{$meal->calories}}kcal</md-list-item>
+                <md-list-item>{{$meal->food['name']}} - {{$meal->calories}}kcal <a href = "/meals/edit/{{$meal->id}}"><md-icon>create</md-icon></a></md-list-item>
             @endif
             @endforeach
            </md-list>
@@ -109,7 +108,7 @@ Daily Intake
       <md-card-expand>
         <md-card-actions md-alignment="space-between">
            <div>
-            
+
           </div>
 
           <md-card-expand-trigger>
@@ -124,7 +123,7 @@ Daily Intake
            <md-list>
            @foreach(Auth::user()->meals as $meal)
             @if($meal->type == 'lunch')
-                <md-list-item>{{$meal->food['name']}}</md-list-item>
+              <md-list-item>{{$meal->food['name']}} - {{$meal->calories}}kcal <a href = "/meals/edit/{{$meal->id}}"><md-icon>create</md-icon></a></md-list-item>
             @endif
             @endforeach
            </md-list>
@@ -142,7 +141,7 @@ Daily Intake
       <md-card-expand>
         <md-card-actions md-alignment="space-between">
            <div>
-            
+
           </div>
 
           <md-card-expand-trigger>
@@ -156,8 +155,8 @@ Daily Intake
           <md-card-content>
            <md-list>
              @foreach(Auth::user()->meals as $meal)
-            @if($meal->type == 'lunch')
-                <md-list-item>{{$meal->food['name']}}</md-list-item>
+            @if($meal->type == 'dinner')
+              <md-list-item>{{$meal->food['name']}} - {{$meal->calories}}kcal <a href = "/meals/edit/{{$meal->id}}"><md-icon>create</md-icon></a></md-list-item>
             @endif
             @endforeach
            </md-list>

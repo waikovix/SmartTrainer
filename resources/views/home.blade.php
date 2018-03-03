@@ -32,7 +32,7 @@ Home
         </md-card-header>
 
         <md-card-content>
-          <h1>74.4kg</h1>
+          <h1>{{Auth::user()->weight}} kg</h1>
         </md-card-content>
       </md-card>
       <h1>Latest news</h1>

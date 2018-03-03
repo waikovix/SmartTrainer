@@ -24,12 +24,31 @@ class MealController extends Controller
         $meal->carbs = request('carbs');
         $meal->type = request('meal');
         $meal->save();
-        return redirect('/daily-intake');        
+        return redirect('/daily-intake');
     }
-    public function find($id){
+    public function find($id){ //function to display the food information
         $macros = Food::find($id);
         return view('meals',compact('macros'));
     }
-   
-  
+    public function findMeal($id){
+      $meal = Meal::find($id);
+      return view('edit_meal',compact('meal'));
+    }
+
+    public function update($id){
+        $meal = Meal::find($id);
+        $meal->amount = request('amount');
+        $meal->calories = request('calories');
+        $meal->protein = request('protein');
+        $meal->fat = request('fat');
+        $meal->carbs = request('carbs');
+        $meal->type = request('meal');
+        $meal->save();
+        return redirect('/daily-intake');
+    }
+    public function delete($id){
+        $meal = Meal::find($id)->delete();
+        return redirect('/daily-intake');
+    }
+
 }

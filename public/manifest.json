@@ -1,0 +1,17 @@
+{
+  "name": "Smart Trainer",
+  "short_name": "Smart Trainer",
+  "description": "Web fitness app",
+  "lang": "en-US",
+  "start_url": "/home",
+  "display": "standalone",
+  "theme_color": "#0040FF",
+    "background_color":"#0040FF",
+  "icons": [
+    {
+      "src": "photos/logo.png",
+      "sizes": "746x746",
+      "type": "image/png"
+    }
+  ]
+}

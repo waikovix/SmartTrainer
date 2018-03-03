@@ -68,7 +68,7 @@
                 margin-bottom: 30px;
             }
             #myVideo {
-    position: fixed;
+    position:fixed ;
     right: 0;
     bottom: 0;
     min-width: 100%; 

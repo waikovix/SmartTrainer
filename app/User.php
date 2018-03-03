@@ -9,7 +9,7 @@ use Carbon\Carbon;
 
 class User extends Authenticatable
 {
-    
+
     use Notifiable;
 
     /**
@@ -34,5 +34,17 @@ class User extends Authenticatable
     }
     public function friends(){
         return $this->hasMany('App\Friend')->where('aproved','=','1');
+    }
+    public function progress(){
+        return $this->hasMany('App\Progress');
+    }
+    public function kg_progress(){
+        return $this->hasMany('App\Kg')->orderBy('id','Desc')->take(7);
+    }
+    public function admin(){
+        return $this->hasOne('App\Admin');
+    }
+    public function weight(){
+      return $this->hasMany('App\Kg')->orderBy('id','Desc')->take(1);
     }
 }

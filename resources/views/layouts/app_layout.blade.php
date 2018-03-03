@@ -4,6 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="{{asset('manifest.json')}}">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Smart Trainer">
+<meta name="apple-mobile-web-app-title" content="Smart Trainer">
+<meta name="theme-color" content="#0040FF">
+<meta name="msapplication-navbutton-color" content="#0040FF">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-starturl" content="/home">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" type="image/png" sizes="746x746" href="{{asset('photos/logo.png')}}">
+<link rel="apple-touch-icon" type="image/png" sizes="746x746" href="{{asset('photos/logo.png')}}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -30,7 +44,7 @@
         </a>
         <span class="md-title">@yield('title')</span>
         @yield('addons')
-        
+
       </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible">
@@ -56,10 +70,12 @@
           </md-list-item>
 
           <md-list-item>
+          <a href ="/progress">
             <md-button>
             <md-icon>trending_up</md-icon>
             <span class="md-list-item-text"> Progress</span>
             </md-button>
+            </a>
           </md-list-item>
 
           <md-list-item>
@@ -72,10 +88,12 @@
           </md-list-item>
 
           <md-list-item>
-            <md-button to = "blog" @click = "menuVisible = 'false', title = 'Blog'">
+          <a href = "/blog">
+            <md-button @click = "menuVisible = 'false', title = 'Blog'">
               <md-icon>forum</md-icon>
             <span class="md-list-item-text"> Blog</span>
               </md-button>
+              </a>
           </md-list-item>
 
           <md-list-item>
@@ -118,11 +136,24 @@
     </div>
 
     <!-- Scripts -->
-    
+
     <script src="{{ asset('js/app.js') }}"></script>
-   
+     <script>
+    if (navigator.serviceWorker.controller) {
+    	  console.log('[PWA Builder] active service worker found, no need to register')
+    	} else {
+    	  //Register the ServiceWorker
+    	  navigator.serviceWorker.register("{{asset('pwabuilder-sw.js')}}", {
+    	    scope: './'
+    	  }).then(function(reg) {
+    	    console.log('Service worker has been registered for scope:'+ reg.scope);
+    	  });
+    	}
+    </script>
+
+
     @yield('scripts')
-   
+
     @yield('style')
     <style>
 body {
@@ -183,11 +214,11 @@ header span {
   color: white;
 }
 a {
-   color:black; 
+   color:black;
    text-decoration:none;
 }
 .md-app-content{
-  min-height:530px;
+  min-height:570px;
 }
 </style>
 

@@ -19,6 +19,7 @@ import axios from 'axios'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
+import Progress from './components/Progress'
 
 Vue.use(VueMaterial)
 Vue.component('progress-bar', {
@@ -26,7 +27,7 @@ Vue.component('progress-bar', {
     template: ' <div id="myProgress"><div v-bind:id="myBar-green">{{element}} : {{value}} / {{valueof}}g</div> </div>'
   });
 Vue.component('meal-item',{
-    props:['mealid','name'],
+    props:['mealid','name',],
     template:'<a :href = "BuildUrl">{{name}}</a>',
     data:() =>({
     url:''
@@ -35,6 +36,19 @@ Vue.component('meal-item',{
     BuildUrl: function () {
         var id = this.mealid
         return this.mealid = '/meals/add/'+id;
+    }
+}
+});
+Vue.component('item',{
+    props:['mealid','name','urll'],
+    template:'<a :href = "BuildUrl">{{name}}</a>',
+    data:() =>({
+    url:''
+}),
+    computed:{
+    BuildUrl: function () {
+        var id = this.mealid
+        return this.mealid = this.urll +id;
     }
 }
 });
@@ -98,11 +112,81 @@ Vue.component('meal-item',{
     }
   }
 });
+  Vue.component('render-post',{
+     props:['post-body'],
+     template:' <hr> <br> {{post-body}}'
+  });
+  Vue.component('blog',{
+      template:'<div>\n' +
+          '<a   v-for = "item in items" hfref = "/blog/post/item.id">'+
+
+      '    <md-card md-with-hover>\n' +
+      '      <md-ripple>\n' +
+      '        <md-card-header>\n' +
+      '          <div class="md-title">Card with hover effect</div>\n' +
+      '          <div class="md-subhead">It also have a ripple</div>\n' +
+      '        </md-card-header>\n' +
+      '\n' +
+      '        <md-card-content>\n' +
+      '          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.\n' +
+      '        </md-card-content>\n' +
+      '\n' +
+      '\n' +
+      '      </md-ripple>\n' +
+      '    </md-card>\n' +
+      '   </a> ' +
+      '   <br> ' +
+
+      '  </div>',
+      data:() =>({
+      show   : false, // display content after API request
+      offset : 5,     // items to display after scroll
+      display: 5,     // initial items
+      trigger: 300,   // how far from the bottom to trigger infinite scroll
+      items  : [],    // server response data
+      end    : false, // no more resources
+
+  }),
+      methods:{
+          fetchData:function(){
+              let app = this;
+              axios.get('/blog/'+app.offset).then(function(response){
+                app.items = response.model;
+              });
+
+          },
+    scroll() {
+        window.onscroll = ev => {
+            if (
+                window.innerHeight + window.scrollY >=
+                (document.body.offsetHeight - this.trigger)
+            ) {
+                if (this.display < this.items.length) {
+                    this.display = this.display + this.offset;
+                }
+                else {
+                    this.end = true;
+                }
+            }
+        };
+    }
+},
+mounted() {
+    // track scroll event
+    this.scroll();
+},
+created() {
+    // get the data by performing API request
+    this.fetchData();
+}
+
+  });
+  Vue.component('user-progress',Progress);
 
 const app = new Vue({
     el: '#app',
     data:{
-        menuVisible:false,       
+        menuVisible:false,
         showDialog: false,
         search:'',
         items:'',
@@ -115,14 +199,24 @@ const app = new Vue({
             axios.get('/meals/search/'+app.search)
         .then(function (response) {
             app.items = [];
-            app.items=response.data.model;   
+            app.items=response.data.model;
   }).catch(function (error) {
     console.log(error);
   });
         },
         findUser(){ //function to search for user and return json
             let app = this;
-            axios.get('/friends/'+app.search)
+            axios.get('/users/search/'+app.search)
+                .then(function(response){
+                    app.items = [];
+                    app.items = response.data.model;
+                }).catch(function(error){
+                    console.log(error);
+            });
+        },
+        findexercise(){ //function to search for user and return json
+            let app = this;
+            axios.get('/progress/exercise/search/'+app.search)
                 .then(function(response){
                     app.items = [];
                     app.items = response.data.model;
@@ -131,7 +225,8 @@ const app = new Vue({
             });
         }
 
-    
+
+
     }
 
 });

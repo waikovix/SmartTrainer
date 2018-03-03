@@ -49,15 +49,15 @@ Friends
       <md-input  v-model = "search" @keyup = "findUser"></md-input>
     </md-field>
     <h1>Result</h1>
-    <hr> 
+    <hr>
     <ul>
-    <li  v-for = "item in items"><meal-item  :mealid = 'item.id' :name = 'item.name'></meal-item></li>
+    <li  v-for = "item in items"><item  :mealid = 'item.id' :name = 'item.name' urll = '/user/'></item></li>
     </ul>
     <md-dialog-actions>
         <md-button class="md-primary" @click="showDialog = false">Close</md-button>
         </md-dialog-actions>
         </md-tab>
-       
+
     </md-dialog>
 @endsection
 @section('style')
