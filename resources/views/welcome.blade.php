@@ -71,7 +71,7 @@
     position:fixed ;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100%;
 }
         </style>
@@ -91,7 +91,7 @@
                     @endauth
                 </div>
             @endif
-           
+
             <div class="content">
                 <div class="title m-b-md">
                     Smart Trainer
@@ -101,8 +101,7 @@
                     <a href="https://laravel.com/docs">About Us</a>
                     <a href="https://laracasts.com">Our Website</a>
                     <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/waikovix/SmartTrainer">GitHub</a>
                 </div>
             </div>
         </div>
