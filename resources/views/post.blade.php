@@ -3,5 +3,5 @@
 {{$post->title}}
 @endsection
 @section('content')
-<render-post post-body = "{{$post->body}}"></render-post>
+{!! $post->body !!}
 @endsection

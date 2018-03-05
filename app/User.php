@@ -44,7 +44,7 @@ class User extends Authenticatable
     public function admin(){
         return $this->hasOne('App\Admin');
     }
-    public function weight(){
-      return $this->hasMany('App\Kg')->orderBy('id','Desc')->take(1);
+    public function last_weight(){
+      return $this->hasMany('App\Kg')->latest()->take(1);
     }
 }

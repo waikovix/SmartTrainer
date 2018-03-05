@@ -1,0 +1,61 @@
+<template>
+  <md-steppers :md-active-step.sync="active" md-vertical md-linear>
+       <md-step id="first" md-label="How to add food to your daily intahe" md-description="Optional" :md-editable="false" :md-done.sync="first">
+         <img src = 'https://lh3.googleusercontent.com/ghz534o7--tGnQZiLohmFfUsl3rUAg0a6jV1RaWinmHjMvcNaDGXxaTiCtePm3NvdVebc_TocKOMUjJowdFzKznGnxNpSSvpWVMbDYZlIlh43n3Q24iQjglk5KO9cU2Dmb3As97IaN_mRPJ0xvThZ62r4wviGl74T79pyJyVh3rl18rpbySjzBkhnxiUt5kmqueLhSJZlL7gF61KwY9XEOgahHnHKCKVcCw2F5gH57g3bj-YFb-Db5byArynHSqGMX6sBgLqQkCCWE0kUkoLcniNbaNbP8EE8kYAgxDzE8CBsPxF5DgXwpsH6quIoN5X9WXW3XB3o6D9kA7fyYqwSOOFlEdp59hIQpfbxS00IH7bitbOpFpSFjqg7nXGuJLoRxk5tS-veOoWJ9gEvlbJ3VeqzK1NquUesu93S9hldpSA1aNxKkHV7fQL6i-Cm54A1W1av_fTW5Dr1Gna-YqPYEHeNNMrBAlZW4SPswMNNMo5UtOYCu72m0oZgzTgFyPtiY1WHHRPVKsJYwZW5RftdGCq_OkhA1_aS0K5LpC--QzIL0HZNqfJ2CfyvuMkY0LVQRLPlQkQPnv6YPDij3kacQ6YG1H78sycBBFjPnU=w1178-h662-no'>
+         <img src = 'https://lh3.googleusercontent.com/J6a8iHlYLniiq_Po5LOnCcfpP0gwl3bsYOsm28s575ctBIDg92AOrQE6vYkbM00e9bLiAxLje6I1kjlAbjQYQhSHcF5yx4mhA1TZDyadk30g9OtZKzxnPvXIdkZp-ehWfmN5q5U-60ytr-ZfuPO8FGiBJtVKheKvWSffpU93X4XMQ2f__gqaueJw3_3xmkbusuTBS00hfx1awMktXyid0pE4gaK8xLvezvLtdU1galGMaFZh7Q2sj25iuPeDyuZwoq6uKbrHQwo95unmJJarCmE1-Rbz5GIKZeiv94NCUqG-9GIgwemQEOP9k7BiLjkM3q-s3n3XQZAEFkPQd4N259Sh0pV0np04cEs5cCwWFXoLWGBw1w0mukFhksI-ka_-mEdOFW1s8fsjtFuF-iuNL87X65n21M3KDGVUDeCnUj_2hnXCwAiAVzKynWJL6VkbSgpe6ur3nR7hmjBNhC4bGyE7rgWQfmWZ7t0YJAgxEMhwXl-PP1OTCYNPFhKTZ7iMw_2cR5VIdpSR1Cv74-qdpee31axRAtGb6ujtAeBMr54jh-InQCUifPM2PquQPcEKTqMNgMgHe6eJU3ysbOblbzvx8DTHwmywfwQwePk=w1178-h662-no'>
+
+
+         <img src = "https://lh3.googleusercontent.com/wLzEg_c61nM_aEQmTgr261HxSURtdjMcQv0r4_NMiaKvAck2jNHLPzFeeEHkbNkS6TBV9Kp0qorcYpwYgTHW_5qoTSxOjHeCHMiIMxLg2Aqinx_TZkplD7ljh9603w2vui-llRazS4SKiSvO0J5diLXXLQWjugLTMHM2hVK2alwiB0ONcLzCnSiGWu3Um_ZVGVJVMix9A8znD_WpFLuqmugayMkcTU7mgtsxdlQDUQIgCbM-ycL-RmOupWmduO26pHiqvyEPIalUD-mY91uM-UNvQTSuSQK7CC56Q5MnAOibcMUBeeSB7BoRlUmkLH3H2muRAv23ad1O7xwFAGZi8NANKJIl-bhq5CLM26oGMqRZEZK9WTfpoBq-yyVSIb8UBzVekcNeTQwpqBuyk9DwLM8nqCaUbZ8ttXDWrIASE4RKRTkleZfT8RK3FaRC_nz_OV5POIODduEWomoCijrp63F-NFmdi10TGRhC6kUpQDHBjazbbTLAXR_HzMKRtYin9s8AokWTcLP6bv-wiSKGPNleivA2nj5sYUY9gXezimfkhkcLusghERIfLqkpfs5LDrPjR4cY_ZdPuJX3-qaJbLfd1sF1kSfJwYPSn0A=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/gcCaQaE59XLY7dBxBXIo8PIALloUbC2toNfK_4pe7oYBqDqRe_3fAtqThciz2BXyopYBrVR4ZU1VhU43LxjHQJ9ZgS6r5a6cdLDVgujJiYqzSjZuLjqfhENWOKG9XF4cBXVHW_ZFs5m86mjQHODOhnc5WJ1K8zoLc-ScnLSmvfjmLRuKwhuWPN12qtyaelfcU4mwH5yWp7VKGoz_N_bKWY4e8ajINX9R-nnNo6HdLJx0Yf4onBWsG7TVWPkHLePgHaJFhsTUhO-Yc0uBQ8im5XUzHI2Qd4ySxUnD89nQLbobAqzSkC4qg_ivO_ET1DpU-P3cP0QC6vZeVDEmlCyS6_60rn4IzInMrgWdR9GlOHRDX1-kZF7SlEvRGYSvvGOe1lROhIAf0gYw4L63HHsOp61pzGR9ogonkzrW7ucGfoar5zgFU86AmHFGXxntICOYwuzm1toOJ9iKxAaKuo-cKtPOTqorubqqWUhtS9ssrgslrhrNlsHF2Qxz64LBOA7IE67xhIe3tnGzZQqldMwfrHWWYikb4NmZIZ865sP4GxpG97PxpepnJ6vUT86CiD5jtV-DsMuWA4dysn5BBTLgOVUBhQDbnkQ4HTynOA0=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/2jvm4EnGLrL0uWoc3mgefN3OzBvVHLTZR2BfzaUAxLF6nT1DaOv0xOhX3CkCBA1ypbM0_FopuLVsrvKkhzQesn1AzfGtuBpfkYADDKfZFF9cIZrvcU82CjocO-y2RbYVyRBHhDvJ4LqF7s5HgtxDRBrKwHppkGHUFIUJcoLToCMHtx7duzI8qIpc8TjQjKJx-9ECFEVCHvKuWCh6nXYQvTTOTHpZMSs5W1u6tHp9h07LGqS4tYWRcmUVKEqALNIHn3cSUnu8067U5e8-ePDLHy9p4fwNse0mMVHLBI6JUW8gL5gRSDatAdc4tEtpZncMBnPzSn0h4VhTi9e52_UwpKrQlA7Ni-T37Ub7dm2f-zbuuCUCQ8BjbAo_l4O70rB1_GcXwK6gYjyf47iUmt0hTtcNFv8lMho2pRqkfDisH9aFJQIlvzI0j9k3xJRLMJHLcLO2upiKzAX4g3KAA7VcJYoa0FlbK_ooe04mY79Oh8CQ7GyuL2PcWkcZbOyLQgzTd92aZYe1gkk1T2ZqeQCV1ot3CXzzS2Ijf-QeOeQh1BPQhWKWAafaFi1ba8NOELvMZDB-geedIiQdGKxMeQTyHNzRgwa9K4SFm5Dxwkg=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/Lz5XQizhziWjRmFwv_5K-1LUZrxcTFrI2ap_gz9IxE259zJEVA6bp8Q_d7blbs1iuXhVoQJKiKOBkhu0_OQgGHL8jUBxvKTaDDa85Z7jZueIFF5aAaQz5CAJ9WG8R-E8ZCE3ke-qQWD-9E0vRl7dE_CWQgYOiOdQckFlrpHPGFHIk_dVSdD-WdZSnRSz1j643q2XMhM7CtO2dXq4HDm2Dv5rUOd51jd5m9tPjBmaCWxp9FvXI_IrjOBezMSXYVZbuLzWDxndMbQeFClgjKRazK2DdmlCTxdFNzw9l66zZeGeuqLvpNW1LjDgoTCHeeLTkdaRqRR_VugwFR4_MYn96Rm1VEV-LhwN2HJgZcCKTzsZzz5A4x7jWBY1sub7w54bga3AsvxeRdz5Sc9Ps-BCMVMjszhLR3TlRLupASRuZO4Q-pQEYM_WSrc4ROEMHsSYSY1eyQ6LpOWBkNVOfKAOqd4-GUk-HC4AWio3V8ehcVgzbLGs1VRQfhoJTbo1nT-ZcKMskxFR6S9huA2C_okvw5FlZJwISbXC1Mag6Y7raqPRJ1TDDr9gzumCgLaseYjkV9cLQX59Eh8xPO8zN0hfVJJaL7AHJ8J8WqcsTfQ=w1178-h662-no">
+
+         <md-button class="md-raised md-primary" @click="setDone('first', 'second')">Continue</md-button>
+       </md-step>
+
+       <md-step id="second" md-label="How to log your progress" :md-error="secondStepError" :md-editable="false" :md-done.sync="second">
+         <img src = "https://lh3.googleusercontent.com/h6oCFpskQYgYAn90hGVNsNNn2Sg5SerdgyOjtlNOwQpmp6IZV8t-0tnWkEU-reXHXUyguX9cexD6gZ-81Gah8gM7TCe02WAXe54QxVFaOTsP8MI1ucHY2pBZ9KACPKgZY2lSj18skkhtyyLquNhnZQzkWT8cT28v4FIrID-ngXqOCsHErqy5LP26J8ifhqlAGE8zOpYKl1ty7cIKzIxramkjxcdJFOU23BeNCOvUpIcWGVVuH_tKqPbsKj8-xo_RkcKlmD96KT3fsJJ-kGN3Fpqu8ihcjdzfTgG03CPBDEN__pOeTn869oLackvzBvfMTTIJHvjlylWOqQTA98L5kL7xWz6Tklz7qW67h5Qx0AuvbcjZEJLBBN7zZP7HkkmqxCqZa1PdpnEHEJ9AgFFgfAcea6J7bjNRxHwnEZDhXXhFDtsFB6MLpIVaOl8snl6ZoaBnN-mNLouwWHGzWaQoeHzatc7V4JYMKtmyudljCJc_-EjXQpvsroiC3wWPrssDu-VaOtnuH60QKLJVXmORhKU2AF5tVJOsaRd8wbePweax7TYh2nD6hUW4KPXqqaSpifu6uU_7XHwaX3ZgVjUOhvLPcgXDbGu_zsKRH_4=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/T4fOGzIhoBfXGmn3qPG7SfnqCoPo2jyyjnJQfdJ8N4wWmpm-zU71elcoXan8-w6uhZMScKOmSBFoykEv0U8dSsxI-MtLoiVpgRiiCeuFQAgfQTmHadxj9O-D0vqD01-SMNJpwqyQjJYsrY5Np04Zr72F3gbCu73iurUEZXwfsHp1KSkQ27cEsJC_tw3K5jSWc36SH6sLgd-LfTOWVy2b6FBeOPGc5itTf7zys09ino1kWpS9Nc_qHuxcKTxJvqrV4TqhkJHdZDNK505-VLeomkfl6VCVUBq5gjXQrRvfQ3gZW1rrBw2fxktkG5Gqfs4eV_khgo6uNl75JHzb9plrAKp-ys9naQbUPGtqt6XPNbpkReKihGEEEj_CfjkRmPwnOLPTjrMR8k9kOm5Er5afrEJbobYXDF7Y6jwbAa8QJxOWGa3v10dDEPf5cHlE9KGVRs2iCIZFMlQzZB7Zc7JPels7KzVuGZMIzhtnmDzu0pXgNPZFtCqjQJmXwz8swWuiwLll756UUfVAOYj_m9uXWqIgKe75Zt1ZIPLoBvIOn0YTPxy3O_JzgrNtWZktXA3dfShxhygQEwAkWNUapt_KsxpJPTOokpWyOocTDLE=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/Wbi9qmlzT1FqyKtwAQBCQDwj4yu61N0lgwPqErGpQEYqSNqlLldsn0Ymke1m4yE5Mvm8D14kmUMuiGaRJohuKNxOPscUTVwJ0J0lofZNgltuYakzxJ2pX4qqqCwRgTY4HnzE48asO-BvOF1Iv6joOxbryXvbTzfRVbIJs5LcURUdWBYgOcRYEjyYh3M0bEOw4rNijLo0OiRyvN8gp6gGmT13TdcyAmOlQ1npXIUKbN0xGlfj3dlPXjPc_AqsvI9ES7lTb6P10O6g77K3jQDDXhT9FZB3AxxE-o6wBnY21l01fJEk6HdCcCGbCB8VUNbyVHo7qJ1unRcxZGlXroSiQ0MvsWWZZbaxIlAS63oZikDpB_UYwWXIM5me6-zgWetOTzIIGvPW9qpoI7narIWCDMztbZDh9X9lU8LyaARYOwX68DK9mwQv9Mtjjh3ujTMi4L5diCUopGndx_nOXuY1fC43hAaD3Ps7mcoBZCUiEDsrwI7VnE5efAaztCnOg-rGY2ghgqewymKu79wr97H8gvSOImC_ROuX-DZfDg4jISpRmriCsHch9xf6zOiyN3QOnOIOUQN4vmuxg443m5zc-bSL7YR5sQy3k1uf7SU=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/PdAb2WsFQ8qeDlFlvJQujcQkCjJIn6jYjA_BthpMOKuA44Hhf1pDN993kZauQ0xEOvdFEG2BbW6jXtoUvYMMm6xQDBrF-PVkbke90uTSbdO_W-zxOmyCqzEOlzvdP8BpcbKx_VdWsoB0_XwVNAFC2wuBqB1KYNFRu2PnimeIMid2gyLbnElg7AjVusnggAEFeOnQ9-nm6BR9BXH_PL_untKoNe86KvdL79Swv6ANhXpLZz6NVCRFC_RuYC01OHgCzo6nh62UtxK3eT3FOlKf4C2lUZjdyH5w-wXSHmp-zW6I1YM6vhNamwRn3b9sNJtCmro4V2YRsqW7c3t-44Klo0kgHHCfC-Vu6JLf5Xz3tPm4pPId4UzslyfvrdE2SYps3E168OiTXXNwvREyRAIzGAaS8TJxddvUBFgpNJONsRD4bA2_aif3ipJJxKOAilGKObuShlOXHVwuPk546QoK1TeHnybMa20WK97YAu8UBLBxkQgGlI0NyoM_36ZfgqEgRZ1lv7FnnLqjtPh0HLkeJUqoCdoP8_QDOxzaZtG1LXX4o0Y-TrglUx8Ft_Rjtc9jiIbFpTeIEqRHi23d7eXXI4KySGLL6GnP3bgjwPk=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/jZdAXpJ6ocqhWekd5b50HT31fImdjr-6e2aV8HNtFr89NkIDpXosPEt0n7Zi_46Zk-7-GP8hhJWP0saTPuUlYhrcGtIflwMie16BFn0kwya0yBG2uyAKA6rUaxmOr52NZBsQ84LNiMlbU487Hm2TKhyI8lnYaZK4QaQudiNv8fsiIafg3f0vyqlxdNrt2F9JGuNOsnnJdWpmUqhYaLxmw7mTyetNT1DjNfyvRskzk5K56YcGaLDb4ZV8qG6v9-Fxe3C3v_RrNJ7v7z7hKwQENOzExWSGxUGok0lmDtFSdZlfABnMnDW_p0Bm-hUIzAGtA9jJgeVn6fg_dyNxIvmh9fx5YSM7abtB9m1C-5BgVAWSz-_aHSd7Hhyhi5ixYLIf1dMtATFvc6J7gC-cUs5dZFIn6XP2R9t6KzbPLYNq-Hg9PZzF5aFX7cF24QRK9oTRYMLzDrxn5sySiA35zzLQ4kz5AQ6H15Ins6CdW49IJ_ZDJDdla9YS2Kb6mVrT9m1Nj35N9IZMcnRwYPkb2kqnwiHs388o-DHEHigUVKvJNRdZKdKBBGRxvclsoXRzz2CdLpz2GvBm6It_a92hwpL-sBDJi0c1sQmuduhYJU4=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/lJ3GqsV15v8iRHgBxil6ddEiYDKlnYyXCHWAiH1dr_JSoHi32_dG2flETbO_mgnOBSsw3MylzYhUdzfWN8bb-rqQ7dTEQ5k5w1LtVzFSW35fnb-xWtikQRGILfNZx-0mYmoTi3JkxhtLrZItxRMFJhGy_4CPgjzyEFZgQvyRWg25-GsNgL5J9ODIZHkPvoNKKYVXnCmyJmgi7h1XNjot27QJsUjqH05aVUH1xVGrZ6O6Tc8_pxlGCYx1pjqRAbX0FcQ40POjlUGWupMcOXrsP6KpJxJjDxQXBxGLwA28GEWXA74QsVrJEizFfONvbdUeRM5QJXW2Mo2H_KgOTPGeBKZiasfhoQNNHOzopSbusiq9KvuUfBNuNqxi-GiL76lD5EYIdQSBfTxjxLMrR0UIZtNxIyK-1JazXCXmBALFvS2kn9809iHOnmTB0XpQaTnalKjTomX5Mf2XtneZf5fCzrZeII2jcjqDslZ9TO9eBP1l0klyv3L-FnFnJvSrJyEazZvBYDIjY17LpWJMU4qEfTMOjx2tOPpy95Rw0gkhoWW9Lf2jv3ebAbRj30D5LMWwAbBF9aSRXOIAG5qGc4nkPDkcj_zMTQaMfLGq370=w1178-h662-no">
+         <img src = "https://lh3.googleusercontent.com/1RnSbj6KtzCYavtsW5H7k6MSei0ulKfV6WaWioa4U2i3TmI5RGvZLTc2cXUH6G9GKQ1O6-w6C5uQKLFux2PJ1_XEB8kVUm5e4QgJAxkV1q61pcKwYcRAVu4hEcquFEtVYcXDyk_awEubBnm5N-nFScGZNkOxo_9kGceCxTGFb61j_jXCZixOdACA5fujeScAHCCG5WzVMVOJV28eS5W_ZDrVTuWVerL5lTx6t_pAElvz7F574Qkg79NJPHljqhkN7DW82J6e-pFmTGGMmhPkF4n3x-PNdoTHSflnl9gvZUO4jSG2PO_Aer6o0PGh2hLQr1HXdyKcccmjOjLvKqg0u0oDQqAEjtiKuLK1lzD9B1oeG-za0MMuVlqeaENT_g5G1WPaPjljuFN-MW9580FW6bH4muHRAwekaGZYRX44T5nzCTHTUfpwvfqiar3sxmNRE_tyD1170jVHJPiYf7tQAgrCjmMpX5FFkJmbBSQdyPDMj2jDpKyB1w4qjpZDQqvgtLU3Nh1rcM8UIeXf6LRPRp-8HO-sWOtmX7WY20q20QNdX3iU_q2Jtpb83sPTWbqQkw_XpHAWCsbllCeYzyM8lVrM91zAVXvN8HNswzg=w1178-h662-no">
+         <md-button class="md-raised md-primary" @click="setDone('second', 'third')">Continue</md-button>
+
+       </md-step>
+
+       <md-step id="third" md-label="Third Step" :md-editable="false" :md-done.sync="third">
+         <p>Your complete the tutorial.Now enjoy your new life</p>
+         <a href = "/home"><md-button class="md-raised md-primary" @click="setDone('third')">Done</md-button></a>
+       </md-step>
+     </md-steppers>
+   </div>
+</template>
+
+<script>
+export default {
+    name: "guide",
+    data: () => ({
+      active: 'first',
+      first: false,
+      second: false,
+      third: false,
+    }),
+    methods: {
+      setDone (id, index) {
+        this[id] = true
+
+        this.secondStepError = null
+
+        if (index) {
+          this.active = index
+        }
+      },
+
+    }
+  }
+</script>
+
+<style lang="css">
+</style>

@@ -7,17 +7,17 @@ div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-               
+
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Title</label>
+                            <label for="email" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="title" type="text" class="form-control" name="title"  required autofocus>
+                                <input id="name" type="text" class="form-control" name="name"  required autofocus>
 
                                 @if ($errors->has('title'))
                                     <span class="help-block">
@@ -32,6 +32,6 @@ div class="container">
                                     Create category
                                 </button>
 
-                                
+
                             </div>
 @endsection

@@ -136,7 +136,7 @@
     </div>
 
     <!-- Scripts -->
-
+<script src="https://js.pusher.com/4.1/pusher.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
      <script>
     if (navigator.serviceWorker.controller) {

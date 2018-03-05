@@ -7,7 +7,7 @@ Add post
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-               
+
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="">
@@ -30,7 +30,7 @@ Add post
                             <label for="meal" class="col-md-4 control-label">Category</label>
 
                             <div class="col-md-6">
-                               <select name="categoty" id="category" class="form-control">
+                               <select name="category" id="category" class="form-control">
                                @foreach($categories as $category)
                                <option value = "{{$category->id}}">{{$category->name}}</option>
                                @endforeach
@@ -41,9 +41,9 @@ Add post
                         <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Content</label>
 
-                            
+
                         </div>
-                        <textarea rows="" cols=""></textarea>
+                        <textarea rows="" cols="" name = "body"></textarea>
 
                         <br>
                         <div class="form-group">
@@ -52,7 +52,7 @@ Add post
                                     Create post
                                 </button>
 
-                                
+
                             </div>
                         </div>
                     </form>
@@ -65,6 +65,6 @@ Add post
 @section('scripts')
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
   <script>tinymce.init({ selector:'textarea',
-	  plugins: "image",
+	  plugins: "image , media",
 	   });</script>
 @endsection

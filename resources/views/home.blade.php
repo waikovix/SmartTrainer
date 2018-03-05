@@ -4,6 +4,8 @@ Home
 @endsection
 @section('content')
 <div>
+<achievment v-show = "achievment"></achievment>
+
       <md-card>
         <md-card-header>
           <div class="md-title"><h1>Calories</h1></div>
@@ -32,17 +34,11 @@ Home
         </md-card-header>
 
         <md-card-content>
-          <h1>{{Auth::user()->weight}} kg</h1>
+          <h1>@if(count(Auth::user()->last_weight) > 0)@foreach(Auth::user()->last_weight as $weight ){{$weight->kg}}@endforeach @else{{Auth::user()->weight}} @endif kg</h1>
         </md-card-content>
       </md-card>
       <h1>Latest news</h1>
       <hr>
-
+    <blog></blog>
     </div>
-
-
-
-
-@endsection
-@section('scripts')
 @endsection

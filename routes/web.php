@@ -1,4 +1,5 @@
 <?php
+use App\Events\Acvievment;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
-
+Route::get('/home','AchievmentController@broadcast');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/profile', function(){
     return view('profile');
@@ -37,11 +37,14 @@ Route::get('/friends',function(){
 })->middleware('auth');
 Route::get('/users/search/{name}','UserController@search')->middleware('auth');
 Route::get('/user/{id}','UserController@find')->middleware('auth');
-Route::get('/blog/{start}', 'PostController@index')->name('home')->middleware('auth');
-Route::get('/blog', function(){
-    return view('blog');
-})->name('home')->middleware('auth');
+Route::get('/blog/', 'PostController@index')->name('home')->middleware('auth');
+Route::get('blog/post/{id}','PostController@find');
 Route::get('/blog/posts/add','CategoryController@index')->name('home')->middleware('auth');
+Route::post('blog/posts/add','PostController@store');
+Route::get('/blog/category/add',function(){
+  return view('add_category');
+})->name('home')->middleware('auth');
+Route::post('/blog/category/add','CategoryController@store')->name('home')->middleware('auth');
 Route::get('/progress', function(){
     return view('progress');
 });
@@ -68,3 +71,7 @@ Route::delete('progress/kg/edit/{id}','KgController@delete');
 Route::get('/meals/edit/{id}','MealController@findMeal');
 Route::patch('/meals/edit/{id}','MealController@update');
 Route::delete('/meals/edit/{id}','MealController@delete');
+Route::get('/guide',function(){
+  return view('guide');
+});
+Route::get('/home','AchievmentController@broadcast')->middleware('auth');

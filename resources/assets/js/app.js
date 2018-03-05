@@ -20,8 +20,13 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import Progress from './components/Progress'
+import Guide from './components/Guide'
+import Achievment from './components/Achievment'
+import Item from './components/blog-item'
+
 
 Vue.use(VueMaterial)
+Vue.component('achievment',Achievment);
 Vue.component('progress-bar', {
     props: [ 'value', 'valueof', 'element' ],
     template: ' <div id="myProgress"><div v-bind:id="myBar-green">{{element}} : {{value}} / {{valueof}}g</div> </div>'
@@ -39,6 +44,8 @@ Vue.component('meal-item',{
     }
 }
 });
+Vue.component('guide',Guide);
+Vue.component('blog-item',Item);
 Vue.component('item',{
     props:['mealid','name','urll'],
     template:'<a :href = "BuildUrl">{{name}}</a>',
@@ -112,75 +119,6 @@ Vue.component('item',{
     }
   }
 });
-  Vue.component('render-post',{
-     props:['post-body'],
-     template:' <hr> <br> {{post-body}}'
-  });
-  Vue.component('blog',{
-      template:'<div>\n' +
-          '<a   v-for = "item in items" hfref = "/blog/post/item.id">'+
-
-      '    <md-card md-with-hover>\n' +
-      '      <md-ripple>\n' +
-      '        <md-card-header>\n' +
-      '          <div class="md-title">Card with hover effect</div>\n' +
-      '          <div class="md-subhead">It also have a ripple</div>\n' +
-      '        </md-card-header>\n' +
-      '\n' +
-      '        <md-card-content>\n' +
-      '          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.\n' +
-      '        </md-card-content>\n' +
-      '\n' +
-      '\n' +
-      '      </md-ripple>\n' +
-      '    </md-card>\n' +
-      '   </a> ' +
-      '   <br> ' +
-
-      '  </div>',
-      data:() =>({
-      show   : false, // display content after API request
-      offset : 5,     // items to display after scroll
-      display: 5,     // initial items
-      trigger: 300,   // how far from the bottom to trigger infinite scroll
-      items  : [],    // server response data
-      end    : false, // no more resources
-
-  }),
-      methods:{
-          fetchData:function(){
-              let app = this;
-              axios.get('/blog/'+app.offset).then(function(response){
-                app.items = response.model;
-              });
-
-          },
-    scroll() {
-        window.onscroll = ev => {
-            if (
-                window.innerHeight + window.scrollY >=
-                (document.body.offsetHeight - this.trigger)
-            ) {
-                if (this.display < this.items.length) {
-                    this.display = this.display + this.offset;
-                }
-                else {
-                    this.end = true;
-                }
-            }
-        };
-    }
-},
-mounted() {
-    // track scroll event
-    this.scroll();
-},
-created() {
-    // get the data by performing API request
-    this.fetchData();
-}
-
-  });
   Vue.component('user-progress',Progress);
 
 const app = new Vue({
@@ -190,7 +128,10 @@ const app = new Vue({
         showDialog: false,
         search:'',
         items:'',
-        showNutrion:false
+        showNutrion:false,
+        achievment:false,
+        text:'',
+        img:''
 
     },
     methods:{
@@ -229,4 +170,15 @@ const app = new Vue({
 
     }
 
+});
+Pusher.logToConsole = true;
+
+var pusher = new Pusher('971da6d621cb4b98ebfe', {
+ cluster: 'eu',
+ encrypted: true
+});
+
+var channel = pusher.subscribe('my-channel');
+channel.bind('App\Events\Acvievment', function(data) {
+ alert(data.message);
 });

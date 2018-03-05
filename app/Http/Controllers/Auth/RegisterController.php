@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/guide';
 
     /**
      * Create a new controller instance.
@@ -67,8 +67,8 @@ class RegisterController extends Controller
         $calories = $data['weight'] * $data['target'];
         $protein = $data['weight']*2;
         $fat = $data['weight'] * 1.1;
-        $carbs = ($calories -(($protein*4)+($fat*9))) / 4; 
-        
+        $carbs = ($calories -(($protein*4)+($fat*9))) / 4;
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -79,6 +79,6 @@ class RegisterController extends Controller
             'carbs' => $carbs,
             'fat' =>$fat,
         ]);
-        
+
     }
 }
